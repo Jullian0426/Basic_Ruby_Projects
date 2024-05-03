@@ -1,12 +1,11 @@
 def substrings(string, dictionary)
-  substrings_count = Hash.new(0)
-  stringArray = string.downcase.split
+  substrings_count = Hash.new
+  normalized_string = string.downcase
 
   dictionary.each do |substring|
-    stringArray.each do |word|
-      if word.include?(substring.downcase)
-        substrings_count[substring] += 1
-      end
+    matches = normalized_string.scan(substring.downcase)
+    if matches.any?
+      substrings_count[substring] = matches.count
     end
   end
   substrings_count
