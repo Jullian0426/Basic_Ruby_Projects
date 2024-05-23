@@ -13,6 +13,3 @@ def caesar_cipher(text, shift)
   end
   shifted_text.join
 end
-
-
-puts caesar_cipher("What a string!", 5)  # Output should be "Bmfy f xywnsl!"
